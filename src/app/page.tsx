@@ -6,6 +6,11 @@ import Link from "next/link"
 const works = [
   { title: "Goznuk", timeline: "WIP", link: "" },
   {
+    title: "AWS Security Monitoring System",
+    timeline: "2025",
+    link: "https://github.com/jeonghoyang12/security-monitoring-project",
+  },
+  {
     title: "Blog with Notion",
     timeline: "2024",
     link: "https://github.com/jeonghoyang12/my-blog",
