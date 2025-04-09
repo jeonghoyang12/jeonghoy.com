@@ -1,7 +1,25 @@
-"use client"
 import React from "react"
 import Link from "next/link"
-// import { ArrowUpRight } from "@phosphor-icons/react"
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+
+const getPosts = () => {
+  const postsDirectory = path.join(process.cwd(), "posts")
+  const filenames = fs.readdirSync(postsDirectory)
+
+  return filenames.map((filename) => {
+    const filePath = path.join(postsDirectory, filename)
+    const fileContents = fs.readFileSync(filePath, "utf8")
+    const { data } = matter(fileContents)
+
+    return {
+      title: data.title,
+      date: data.date,
+      slug: filename.replace(".md", ""),
+    }
+  })
+}
 
 const works = [
   { title: "Goznuk", timeline: "WIP", link: "" },
@@ -30,6 +48,8 @@ const exprs = [
   },
 ]
 
+const posts = getPosts()
+
 export default function Home() {
   return (
     <div>
@@ -54,7 +74,7 @@ export default function Home() {
 
       {/* Experience */}
       <div className="mt-6 text-[14px]">
-        <div className="font-medium mb-2 text-[15px]">Experience</div>
+        <div className="font-medium mb-2 text-[15px]">Experiences</div>
         {exprs.map((expr, index) => (
           <div
             key={index}
@@ -73,7 +93,7 @@ export default function Home() {
 
       {/* Work (Side Projects) */}
       <div className="mt-12 text-[14px]">
-        <div className="font-medium mb-2 text-[15px]">Work</div>
+        <div className="font-medium mb-2 text-[15px]">Projects</div>
         {works.map((work, index) =>
           work.timeline === "WIP" ? (
             <div
@@ -105,12 +125,27 @@ export default function Home() {
       </div>
 
       {/* Writing (Blogs) */}
-      {/* <div className="mt-12 mb-12 text-[14px]">
-        <div className="font-medium mb-2 text-[15px]">Writing</div>
-        <div className="flex justify-between py-3 font-light">
-          <span className="text-[#A3A3A3]">Coming soon...</span>
-        </div>
-      </div> */}
+      <div className="mt-12 mb-12 text-[14px]">
+        <div className="font-medium mb-2 text-[15px]">Writings</div>
+        {posts.map((post, index) => (
+          <div
+            key={index}
+            className={`py-3 font-light ${
+              index < posts.length - 1 ? "border-b border-neutral-200" : ""
+            }`}
+          >
+            <Link
+              href={`/blog/${post.slug}`}
+              className="hover:text-[#0070f3] transition-colors"
+            >
+              <div className="flex justify-between">
+                <span>{post.title}</span>
+                <span>{post.date}</span>
+              </div>              
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
