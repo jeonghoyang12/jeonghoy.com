@@ -54,17 +54,17 @@ export default function Home() {
   return (
     <div>
       <div className="font-semibold mb-1">Jeongho Yang</div>
-      <div className="text-[#616161] font-light text-[14px] mb-7">
+      <div className="text-[#616161] font-normal text-[14px] mb-7">
         Security Engineer with focus on threat intelligence and digital
         infrastructure protection.
       </div>
-      <div className="mb-7 font-light text-[14px]" style={{ lineHeight: 1.7 }}>
+      <div className="mb-7 font-normal text-[14px]" style={{ lineHeight: 1.7 }}>
         I&apos;m currently pursuing BS in Computer Science with a specialization
         of Cybersecurity / Digital Forensics at Bowling Green State University.
         My background in both software development and security gives me a
         unique perspective on how to build and protect digital systems.
       </div>
-      <div className="font-light text-[14px]" style={{ lineHeight: 1.7 }}>
+      <div className="font-normal text-[14px]" style={{ lineHeight: 1.7 }}>
         My experience includes implementing security solutions for large
         companies with global operations and setting up cloud security on
         platforms like AWS and Azure. I&apos;m committed to developing effective
@@ -78,7 +78,7 @@ export default function Home() {
         {exprs.map((expr, index) => (
           <div
             key={index}
-            className={`flex justify-between py-3 font-light ${
+            className={`flex justify-between py-3 font-normal ${
               index < exprs.length - 1 ? "border-b border-neutral-200" : ""
             }`}
           >
@@ -98,7 +98,7 @@ export default function Home() {
           work.timeline === "WIP" ? (
             <div
               key={index}
-              className={`flex justify-between py-3 font-light ${
+              className={`flex justify-between py-3 font-normal ${
                 index < works.length - 1 ? "border-b border-neutral-150" : ""
               }`}
             >
@@ -112,7 +112,7 @@ export default function Home() {
               className="hover:text-[#0070f3] transition-colors"
             >
               <div
-                className={`flex justify-between py-3 font-light ${
+                className={`flex justify-between py-3 font-normal ${
                   index < works.length - 1 ? "border-b border-neutral-200" : ""
                 }`}
               >
@@ -130,7 +130,7 @@ export default function Home() {
         {posts.map((post, index) => (
           <div
             key={index}
-            className={`py-3 font-light ${
+            className={`py-3 font-normal ${
               index < posts.length - 1 ? "border-b border-neutral-200" : ""
             }`}
           >
