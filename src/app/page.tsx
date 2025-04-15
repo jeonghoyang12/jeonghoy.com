@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import fs from "fs"
 import path from "path"
@@ -40,11 +41,15 @@ const exprs = [
     company: "ShinwooTNS",
     title: "Cloud Security Engineering Intern",
     timeline: "Aug 2022 - Aug 2023",
+    description:
+      "Implemented cloud security solutions and managed VPN systems for a global logistics company.",
   },
   {
     company: "McKinley Rice",
-    title: "Software Engineering Intern",
+    title: "Software Developer Intern",
     timeline: "Dec 2019 - Jun 2020",
+    description:
+      "Developed e-commerce and dating platforms using Django and React.",
   },
 ]
 
@@ -52,58 +57,50 @@ const posts = getPosts()
 
 export default function Home() {
   return (
-    <div>
-      <div className="font-semibold mb-1">Jeongho Yang</div>
-      <div className="text-[#616161] font-normal text-[14px] mb-7">
-        Security Engineer with focus on threat intelligence and digital
-        infrastructure protection.
+    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[14px] font-light">
+      <div className="flex items-center gap-x-3">
+        <Image
+          src="/images/photo.png"
+          alt="jeongho yang"
+          width={128}
+          height={128}
+          className="w-10 h-10 rounded-full object-cover"
+          unoptimized
+        />
+        <h1 className="font-bold text-[17px]">Jeongho Yang</h1>
       </div>
-      <div className="mb-7 font-normal text-[14px]" style={{ lineHeight: 1.7 }}>
-        I&apos;m currently pursuing BS in Computer Science with a specialization
-        of Cybersecurity / Digital Forensics at Bowling Green State University.
-        My background in both software development and security gives me a
-        unique perspective on how to build and protect digital systems.
-      </div>
-      <div className="font-normal text-[14px]" style={{ lineHeight: 1.7 }}>
-        My experience includes implementing security solutions for large
-        companies with global operations and setting up cloud security on
-        platforms like AWS and Azure. I&apos;m committed to developing effective
-        ways to guard against data leaks and security threats.
-      </div>
-      <div className="border-t border-neutral-300 py-3 mt-9" />
+      <p>I&apos;m a security engineer based in Ohio, USA.</p>
+      <p>
+        I&apos;m currently pursuing B.S. in computer science with a
+        specialization of cybersecurity at BGSU. My background includes
+        internship experience in cloud security and software development.
+      </p>
 
-      {/* Experience */}
-      <div className="mt-6 text-[14px]">
-        <div className="font-medium mb-2 text-[15px]">Experiences</div>
+      {/* Experiences */}
+      <div className="flex flex-col gap-y-5">
+        <h2 className="font-semibold">Experience</h2>
         {exprs.map((expr, index) => (
-          <div
-            key={index}
-            className={`flex justify-between py-3 font-normal ${
-              index < exprs.length - 1 ? "border-b border-neutral-200" : ""
-            }`}
-          >
+          <div key={index}>
             <div>
-              <span>{expr.company}</span>
-              <span> / {expr.title}</span>
+              <span className="font-normal">{expr.company}</span>
+              <span className="text-black text-opacity-50">
+                {" "}
+                {expr.timeline}
+              </span>
             </div>
-            <span>{expr.timeline}</span>
+            <span className="font-light">{expr.description}</span>
           </div>
         ))}
       </div>
 
-      {/* Work (Side Projects) */}
-      <div className="mt-12 text-[14px]">
-        <div className="font-medium mb-2 text-[15px]">Projects</div>
+      {/* Projects */}
+      <div className="flex flex-col gap-y-3">
+        <h2 className="font-semibold">Projects</h2>
         {works.map((work, index) =>
           work.timeline === "WIP" ? (
-            <div
-              key={index}
-              className={`flex justify-between py-3 font-normal ${
-                index < works.length - 1 ? "border-b border-neutral-150" : ""
-              }`}
-            >
-              <span className="text-[#A3A3A3]">{work.title}</span>
-              <span className="text-[#A3A3A3]">WIP</span>
+            <div key={index}>
+              <span className="text-black text-opacity-50">{work.title}</span>
+              <span className="text-black text-opacity-50"> WIP</span>
             </div>
           ) : (
             <Link
@@ -111,40 +108,64 @@ export default function Home() {
               href={work.link}
               className="hover:text-[#0070f3] transition-colors"
             >
-              <div
-                className={`flex justify-between py-3 font-normal ${
-                  index < works.length - 1 ? "border-b border-neutral-200" : ""
-                }`}
-              >
+              <div>
                 <span>{work.title}</span>
-                <span>{work.timeline}</span>
+                <span className="text-black text-opacity-50">
+                  {" "}
+                  {work.timeline}
+                </span>
               </div>
             </Link>
           )
         )}
       </div>
 
-      {/* Writing (Blogs) */}
-      <div className="mt-12 mb-12 text-[14px]">
-        <div className="font-medium mb-2 text-[15px]">Writings</div>
+      {/* Writings */}
+      <div className="flex flex-col gap-y-3">
+        <h2 className="font-semibold">Writings</h2>
         {posts.map((post, index) => (
-          <div
+          <Link
             key={index}
-            className={`py-3 font-normal ${
-              index < posts.length - 1 ? "border-b border-neutral-200" : ""
-            }`}
+            href={`/blog/${post.slug}`}
+            className="hover:text-[#0070f3] transition-colors"
           >
-            <Link
-              href={`/blog/${post.slug}`}
-              className="hover:text-[#0070f3] transition-colors"
-            >
-              <div className="flex justify-between">
-                <span>{post.title}</span>
-                <span>{post.date}</span>
-              </div>              
-            </Link>
-          </div>
+            <div>
+              <span>{post.title}</span>
+              <span className="text-black text-opacity-50"> {post.date}</span>
+            </div>
+          </Link>
         ))}
+      </div>
+
+      {/* Contacts */}
+      <div className="flex flex-col gap-y-3">
+        <h2 className="font-semibold">Get in touch :)</h2>
+        <div className="flex gap-x-3">
+          <Link
+            href="mailto:wjdwjdgh6998@gmail.com"
+            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+          >
+            Email
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/jeongho-yang/"
+            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+          >
+            LinkedIn
+          </Link>
+          <Link
+            href="https://github.com/jeonghoyang12"
+            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+          >
+            Github
+          </Link>
+          <Link
+            href="/jeongho_yang_resume_pages.pdf"
+            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+          >
+            Resume
+          </Link>
+        </div>
       </div>
     </div>
   )

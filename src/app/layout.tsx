@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { Inter } from "next/font/google"
-import Footer from "@/components/footer"
 import React from "react"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -23,11 +22,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className}`}>
       <body className="bg-[#ffffff] text-black text-[16px] min-h-screen flex flex-col">
         <main className="flex-1">
-          <div className="max-w-[780px] mx-auto px-6 sm:px-8 lg:px-12 mt-12">
+          <div className="flex justify-center px-5 py-20">
             {children}
           </div>
         </main>
-        <Footer />
       </body>
     </html>
   )

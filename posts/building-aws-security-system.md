@@ -1,6 +1,6 @@
 ---
 title: "Building AWS Security System"
-date: "2025-04"
+date: "Apr 2025"
 ---
 
 Security monitoring is essential for cloud environments, but getting hands-on experience can be challenging. I built my own AWS security monitoring system to learn the fundamentals and bridge the gap between theory and practice.
