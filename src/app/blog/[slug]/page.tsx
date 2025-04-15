@@ -1,20 +1,6 @@
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
+import { getPost } from "@/lib/posts"
 import ReactMarkdown from "react-markdown"
 import rehypeRaw from "rehype-raw"
-
-const getPost = (slug: string) => {
-  const filePath = path.join(process.cwd(), "posts", `${slug}.md`)
-  const fileContents = fs.readFileSync(filePath, "utf8")
-  const { data, content } = matter(fileContents)
-
-  return {
-    title: data.title,
-    date: data.date,
-    content,
-  }
-}
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const { slug } = params
@@ -27,7 +13,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <span className="text-black text-opacity-50 mb-5">{post.date}</span>
       </div>
 
-      <div>
+      {/* Markdown Content */}
+      <div className="w-full">
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]} // Allows raw HTML in Markdown
           components={{
@@ -44,6 +31,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               <ul
                 {...props}
                 className="list-disc ml-6 mb-4 mt-4 leading-relaxed"
+              />
+            ),
+            img: ({ ...props }) => (
+              <img
+                {...props}
+                className="w-[120%] -ml-[10%] max-w-none h-auto my-4 border border-gray-300 rounded-lg shadow-sm" // Add border and styling
               />
             ),
           }}
