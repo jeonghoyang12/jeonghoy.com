@@ -67,7 +67,7 @@ export default function Home() {
           className="w-10 h-10 rounded-full object-cover"
           unoptimized
         />
-        <h1 className="font-bold text-[17px]">Jeongho Yang</h1>
+        <h1 className="font-bold text-[17px]">Kevin Jeongho Yang</h1>
       </div>
       <p>I develop secure digital solutions focusing on cybersecurity and web technologies.</p>
       <p>
