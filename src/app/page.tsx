@@ -57,7 +57,7 @@ const posts = getPosts()
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-16 max-w-[500px] w-full text-[18px] font-normal tracking-[-0.35px]">
+    <div className="flex flex-col gap-y-16 max-w-[500px] w-full text-[16px] font-normal tracking-[-0.35px]">
       <div className="flex items-center gap-x-3">
         <Image
           src="/images/photo.png"
@@ -67,7 +67,7 @@ export default function Home() {
           className="w-10 h-10 rounded-full object-cover"
           unoptimized
         />
-        <h2 className="font-semibold text-[24px] text-opacity-100 tracking-tighter">
+        <h2 className="font-semibold text-[22px] text-opacity-100 tracking-tighter">
           Kevin Jeongho Yang
         </h2>
       </div>
