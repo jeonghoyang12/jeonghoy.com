@@ -57,7 +57,7 @@ const posts = getPosts()
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[14px] font-[300]">
+    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[14px] font-normal tracking-tight">
       <div className="flex items-center gap-x-3">
         <Image
           src="/images/photo.png"
@@ -69,8 +69,8 @@ export default function Home() {
         />
         <h1 className="font-bold text-[17px]">Kevin Jeongho Yang</h1>
       </div>
-      <p>I develop secure digital solutions focusing on cybersecurity and web technologies.</p>
-      <p>
+      <p className="text-black text-opacity-70">I develop secure digital solutions focusing on cybersecurity and web technologies.</p>
+      <p className="text-black text-opacity-70">
         Currently pursuing B.S. in computer science with a
         specialization of cybersecurity at BGSU. My background includes
         internship experience in cloud security and software development.
@@ -82,13 +82,13 @@ export default function Home() {
         {exprs.map((expr, index) => (
           <div key={index}>
             <div>
-              <span className="font-normal">{expr.company}</span>
+              <span>{expr.company}</span>
               <span className="text-black text-opacity-50">
                 {" "}
                 {expr.timeline}
               </span>
             </div>
-            <span className="font-[300] text-black text-opacity-70">{expr.description}</span>
+            <span className="text-black text-opacity-70">{expr.description}</span>
           </div>
         ))}
       </div>
