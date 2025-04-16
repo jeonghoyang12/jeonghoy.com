@@ -67,39 +67,39 @@ export default function Home() {
           className="w-10 h-10 rounded-full object-cover"
           unoptimized
         />
-        <h1 className="font-semibold text-[24px] text-black text-opacity-100 tracking-tighter">
+        <h2 className="font-semibold text-[24px] text-opacity-100 tracking-tighter">
           Kevin Jeongho Yang
-        </h1>
+        </h2>
       </div>
-      <div className="flex flex-col gap-y-5 text-black text-opacity-50 mb-8">
+      <div className="flex flex-col gap-y-5 text-[#111111] text-opacity-50 mb-8">
         <p>
           I develop secure digital solutions focusing on{" "}
-          <span className="text-black text-opacity-100">cybersecurity</span>
+          <span className="text-[#111111] text-opacity-100">cybersecurity</span>
           <br />
           and{" "}
-          <span className="text-black text-opacity-100">web technologies.</span>
+          <span className="text-[#111111] text-opacity-100">web technologies.</span>
         </p>
         <p>
           Currently pursuing{" "}
-          <span className="text-black text-opacity-100">
+          <span className="text-[#111111] text-opacity-100">
             B.S. in computer science
           </span>{" "}
           with
           <br /> a specialization of{" "}
-          <span className="text-black text-opacity-100">cybersecurity</span> at
+          <span className="text-[#111111] text-opacity-100">cybersecurity</span> at
           BGSU.
         </p>
       </div>
 
       {/* Experiences */}
-      <div className="flex flex-col gap-y-5">
-        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
+      <div className="flex flex-col gap-y-5 mb-8">
+        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[16px]">
           EXPERIENCE
         </h2>
         {exprs.map((expr, index) => (
           <div key={index}>
             <div className="flex items-center gap-x-2">
-              <span className="font-semibold">
+              <span>
                 {expr.company}
               </span>
               <span className="text-black text-opacity-25">
@@ -115,23 +115,23 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div className="flex flex-col gap-y-5">
-        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
+      <div className="flex flex-col gap-y-5 mb-8">
+        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[16px]">
           PROJECTS
         </h2>
         {works.map((work, index) =>
           work.timeline === "WIP" ? (
             <div key={index} className="flex items-center gap-x-2">
-              <span className="font-semibold">{work.title}</span>
-              <span className="text-black text-opacity-25"> WIP</span>
+              <span>{work.title}</span>
+              <span className="text-[#111111] text-opacity-25"> WIP</span>
             </div>
           ) : (
             <Link key={index} href={work.link}>
               <div className="flex items-center gap-x-2">
-                <span className="font-semibold text-black hover:text-opacity-50">
+                <span className="text-[#111111] hover:text-opacity-50">
                   {work.title}
                 </span>
-                <span className="text-black text-opacity-25">
+                <span className="text-[#111111] text-opacity-25">
                   {" "}
                   {work.timeline}
                 </span>
@@ -142,17 +142,17 @@ export default function Home() {
       </div>
 
       {/* Writings */}
-      <div className="flex flex-col gap-y-5">
+      <div className="flex flex-col gap-y-5 mb-8">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
           WRITINGS
         </h2>
         {posts.map((post, index) => (
           <Link key={index} href={`/blog/${post.slug}`}>
             <div className="flex items-center gap-x-2">
-              <span className="font-semibold text-black hover:text-opacity-50">
+              <span className="text-[#111111] hover:text-opacity-50">
                 {post.title}
               </span>
-              <span className="text-black text-opacity-25"> {post.date}</span>
+              <span className="text-[#111111] text-opacity-25"> {post.date}</span>
             </div>
           </Link>
         ))}
@@ -161,28 +161,28 @@ export default function Home() {
       {/* Contacts */}
       <div className="flex flex-col gap-y-3">
         <h2 className="font-semibold">Let&apos;s get in touch :)</h2>
-        <div className="flex gap-x-3 text-[15px]">
+        <div className="flex gap-x-3">
           <Link
             href="mailto:wjdwjdgh6998@gmail.com"
-            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
+            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
           >
             Email
           </Link>
           <Link
             href="https://www.linkedin.com/in/jeongho-yang/"
-            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
+            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
           >
             LinkedIn
           </Link>
           <Link
             href="https://github.com/jeonghoyang12"
-            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
+            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
           >
             Github
           </Link>
           <Link
             href="/jeongho_yang_resume_pages.pdf"
-            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
+            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
           >
             Resume
           </Link>
