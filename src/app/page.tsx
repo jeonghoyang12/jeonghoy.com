@@ -128,7 +128,7 @@ export default function Home() {
           ) : (
             <Link key={index} href={work.link}>
               <div className="flex items-center gap-x-2">
-                <span className="text-[#111111] hover:text-opacity-50">
+                <span className="text-[#111111] hover:text-opacity-50 border-b-[1px]">
                   {work.title}
                 </span>
                 <span className="text-[#111111] text-opacity-25">
@@ -149,7 +149,7 @@ export default function Home() {
         {posts.map((post, index) => (
           <Link key={index} href={`/blog/${post.slug}`}>
             <div className="flex items-center gap-x-2">
-              <span className="text-[#111111] hover:text-opacity-50">
+              <span className="text-[#111111] hover:text-opacity-50 border-b-[1px]">
                 {post.title}
               </span>
               <span className="text-[#111111] text-opacity-25"> {post.date}</span>
