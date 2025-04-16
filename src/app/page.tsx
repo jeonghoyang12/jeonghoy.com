@@ -57,7 +57,7 @@ const posts = getPosts()
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[18px] font-normal text-black tracking-[-0.35px]">
+    <div className="flex flex-col gap-y-16 max-w-[500px] w-full text-[18px] font-normal tracking-[-0.35px]">
       <div className="flex items-center gap-x-3">
         <Image
           src="/images/photo.png"
@@ -71,7 +71,7 @@ export default function Home() {
           Kevin Jeongho Yang
         </h1>
       </div>
-      <div className="flex flex-col gap-y-5 text-black text-opacity-50">
+      <div className="flex flex-col gap-y-8 text-black text-opacity-50">
         <p>
           I develop secure digital solutions focusing on{" "}
           <span className="text-black text-opacity-100">cybersecurity</span>
@@ -92,7 +92,7 @@ export default function Home() {
       </div>
 
       {/* Experiences */}
-      <div className="flex flex-col gap-y-5">
+      <div className="flex flex-col gap-y-8">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
           EXPERIENCE
         </h2>
@@ -115,7 +115,7 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div className="flex flex-col gap-y-3">
+      <div className="flex flex-col gap-y-5">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
           PROJECTS
         </h2>
@@ -142,7 +142,7 @@ export default function Home() {
       </div>
 
       {/* Writings */}
-      <div className="flex flex-col gap-y-3">
+      <div className="flex flex-col gap-y-8">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
           WRITINGS
         </h2>
