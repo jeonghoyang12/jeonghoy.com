@@ -57,7 +57,7 @@ const posts = getPosts()
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[14px] font-normal tracking-tight">
+    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[18px] font-normal text-black tracking-[-0.35px]">
       <div className="flex items-center gap-x-3">
         <Image
           src="/images/photo.png"
@@ -67,50 +67,71 @@ export default function Home() {
           className="w-10 h-10 rounded-full object-cover"
           unoptimized
         />
-        <h1 className="font-bold text-[17px]">Kevin Jeongho Yang</h1>
+        <h1 className="font-semibold text-[24px] text-black text-opacity-100 tracking-tighter">
+          Kevin Jeongho Yang
+        </h1>
       </div>
-      <p className="text-black text-opacity-70">I develop secure digital solutions focusing on cybersecurity and web technologies.</p>
-      <p className="text-black text-opacity-70">
-        Currently pursuing B.S. in computer science with a
-        specialization of cybersecurity at BGSU. My background includes
-        internship experience in cloud security and software development.
-      </p>
+      <div className="flex flex-col gap-y-5 text-black text-opacity-50">
+        <p>
+          I develop secure digital solutions focusing on{" "}
+          <span className="text-black text-opacity-100">cybersecurity</span>
+          <br />
+          and{" "}
+          <span className="text-black text-opacity-100">web technologies.</span>
+        </p>
+        <p>
+          Currently pursuing{" "}
+          <span className="text-black text-opacity-100">
+            B.S. in computer science
+          </span>{" "}
+          with
+          <br /> a specialization of{" "}
+          <span className="text-black text-opacity-100">cybersecurity</span> at
+          BGSU.
+        </p>
+      </div>
 
       {/* Experiences */}
       <div className="flex flex-col gap-y-5">
-        <h2 className="font-semibold">Experience</h2>
+        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
+          EXPERIENCE
+        </h2>
         {exprs.map((expr, index) => (
           <div key={index}>
             <div>
-              <span>{expr.company}</span>
-              <span className="text-black text-opacity-50">
+              <span className="font-semibold">
+                {expr.company}
+              </span>
+              <span className="text-black text-opacity-25">
                 {" "}
                 {expr.timeline}
               </span>
             </div>
-            <span className="text-black text-opacity-70">{expr.description}</span>
+            <span className="text-black text-opacity-50">
+              {expr.description}
+            </span>
           </div>
         ))}
       </div>
 
       {/* Projects */}
       <div className="flex flex-col gap-y-3">
-        <h2 className="font-semibold">Projects</h2>
+        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
+          PROJECTS
+        </h2>
         {works.map((work, index) =>
           work.timeline === "WIP" ? (
             <div key={index}>
-              <span className="text-black text-opacity-60">{work.title}</span>
-              <span className="text-black text-opacity-60"> WIP</span>
+              <span className="font-semibold">{work.title}</span>
+              <span className="text-black text-opacity-25"> WIP</span>
             </div>
           ) : (
-            <Link
-              key={index}
-              href={work.link}
-              className="text-black hover:text-opacity-60"
-            >
+            <Link key={index} href={work.link}>
               <div>
-                <span>{work.title}</span>
-                <span className="text-black text-opacity-50">
+                <span className="font-semibold text-black hover:text-opacity-50">
+                  {work.title}
+                </span>
+                <span className="text-black text-opacity-25">
                   {" "}
                   {work.timeline}
                 </span>
@@ -122,16 +143,16 @@ export default function Home() {
 
       {/* Writings */}
       <div className="flex flex-col gap-y-3">
-        <h2 className="font-semibold">Writings</h2>
+        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
+          WRITINGS
+        </h2>
         {posts.map((post, index) => (
-          <Link
-            key={index}
-            href={`/blog/${post.slug}`}
-            className="text-black hover:text-opacity-60"
-          >
+          <Link key={index} href={`/blog/${post.slug}`}>
             <div>
-              <span>{post.title}</span>
-              <span className="text-black text-opacity-50"> {post.date}</span>
+              <span className="font-semibold text-black hover:text-opacity-50">
+                {post.title}
+              </span>
+              <span className="text-black text-opacity-25"> {post.date}</span>
             </div>
           </Link>
         ))}
@@ -140,28 +161,28 @@ export default function Home() {
       {/* Contacts */}
       <div className="flex flex-col gap-y-3">
         <h2 className="font-semibold">Let&apos;s get in touch :)</h2>
-        <div className="flex gap-x-3">
+        <div className="flex gap-x-3 text-[15px]">
           <Link
             href="mailto:wjdwjdgh6998@gmail.com"
-            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
+            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
           >
             Email
           </Link>
           <Link
             href="https://www.linkedin.com/in/jeongho-yang/"
-            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
+            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
           >
             LinkedIn
           </Link>
           <Link
             href="https://github.com/jeonghoyang12"
-            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
+            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
           >
             Github
           </Link>
           <Link
             href="/jeongho_yang_resume_pages.pdf"
-            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
+            className="text-black text-opacity-50 hover:text-opacity-25 border-b-2"
           >
             Resume
           </Link>
