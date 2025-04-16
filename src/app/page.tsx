@@ -92,7 +92,7 @@ export default function Home() {
       </div>
 
       {/* Experiences */}
-      <div className="flex flex-col gap-y-5 mb-4">
+      <div className="flex flex-col gap-y-4 mb-4">
         <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
           EXPERIENCE
         </h2>
@@ -115,7 +115,7 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div className="flex flex-col gap-y-5 mb-4">
+      <div className="flex flex-col gap-y-4 mb-4">
         <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
           PROJECTS
         </h2>
@@ -142,7 +142,7 @@ export default function Home() {
       </div>
 
       {/* Writings */}
-      <div className="flex flex-col gap-y-5 mb-4">
+      <div className="flex flex-col gap-y-4 mb-4">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[14px]">
           WRITINGS
         </h2>
