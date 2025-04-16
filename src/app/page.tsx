@@ -93,7 +93,7 @@ export default function Home() {
 
       {/* Experiences */}
       <div className="flex flex-col gap-y-5 mb-6">
-        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[16px]">
+        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
           EXPERIENCE
         </h2>
         {exprs.map((expr, index) => (
@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* Projects */}
       <div className="flex flex-col gap-y-5 mb-6">
-        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[16px]">
+        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
           PROJECTS
         </h2>
         {works.map((work, index) =>
@@ -143,7 +143,7 @@ export default function Home() {
 
       {/* Writings */}
       <div className="flex flex-col gap-y-5 mb-6">
-        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
+        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[14px]">
           WRITINGS
         </h2>
         {posts.map((post, index) => (
