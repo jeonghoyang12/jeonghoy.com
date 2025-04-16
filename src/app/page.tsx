@@ -71,7 +71,7 @@ export default function Home() {
           Kevin Jeongho Yang
         </h2>
       </div>
-      <div className="flex flex-col gap-y-5 text-[#111111] text-opacity-50 mb-6">
+      <div className="flex flex-col gap-y-5 text-[#111111] text-opacity-50 mb-4">
         <p>
           I develop secure digital solutions focusing on{" "}
           <span className="text-[#111111] text-opacity-100">cybersecurity</span>
@@ -92,7 +92,7 @@ export default function Home() {
       </div>
 
       {/* Experiences */}
-      <div className="flex flex-col gap-y-5 mb-6">
+      <div className="flex flex-col gap-y-5 mb-4">
         <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
           EXPERIENCE
         </h2>
@@ -115,7 +115,7 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div className="flex flex-col gap-y-5 mb-6">
+      <div className="flex flex-col gap-y-5 mb-4">
         <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
           PROJECTS
         </h2>
@@ -142,7 +142,7 @@ export default function Home() {
       </div>
 
       {/* Writings */}
-      <div className="flex flex-col gap-y-5 mb-6">
+      <div className="flex flex-col gap-y-5 mb-4">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[14px]">
           WRITINGS
         </h2>
@@ -161,7 +161,7 @@ export default function Home() {
       {/* Contacts */}
       <div className="flex flex-col gap-y-3">
         <h2 className="font-semibold">Let&apos;s get in touch :)</h2>
-        <div className="flex gap-x-3">
+        <div className="flex gap-x-5">
           <Link
             href="mailto:wjdwjdgh6998@gmail.com"
             className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
