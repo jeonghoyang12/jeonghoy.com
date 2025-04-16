@@ -40,16 +40,16 @@ const exprs = [
   {
     company: "ShinwooTNS",
     title: "Cloud Security Engineering Intern",
-    timeline: "Aug 2022 - Aug 2023",
+    timeline: "2022 - 2023",
     description:
       "Implemented cloud security solutions and managed VPN systems for a global logistics company.",
   },
   {
     company: "McKinley Rice",
     title: "Software Developer Intern",
-    timeline: "Dec 2019 - Jun 2020",
+    timeline: "2019 - 2020",
     description:
-      "Developed e-commerce and dating platforms using Django and React.",
+      "Engineered Full-Stack web app for e-commerce and dating platforms using Django and React.",
   },
 ]
 
@@ -57,7 +57,7 @@ const posts = getPosts()
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[14px] font-light">
+    <div className="flex flex-col gap-y-10 max-w-[500px] w-full text-[14px] font-[300]">
       <div className="flex items-center gap-x-3">
         <Image
           src="/images/photo.png"
@@ -69,9 +69,9 @@ export default function Home() {
         />
         <h1 className="font-bold text-[17px]">Jeongho Yang</h1>
       </div>
-      <p>I&apos;m a security engineer based in Ohio, USA.</p>
+      <p>I develop secure digital solutions focusing on cybersecurity and web technologies.</p>
       <p>
-        I&apos;m currently pursuing B.S. in computer science with a
+        Currently pursuing B.S. in computer science with a
         specialization of cybersecurity at BGSU. My background includes
         internship experience in cloud security and software development.
       </p>
@@ -88,7 +88,7 @@ export default function Home() {
                 {expr.timeline}
               </span>
             </div>
-            <span className="font-light">{expr.description}</span>
+            <span className="font-[300] text-black text-opacity-70">{expr.description}</span>
           </div>
         ))}
       </div>
@@ -99,14 +99,14 @@ export default function Home() {
         {works.map((work, index) =>
           work.timeline === "WIP" ? (
             <div key={index}>
-              <span className="text-black text-opacity-50">{work.title}</span>
-              <span className="text-black text-opacity-50"> WIP</span>
+              <span className="text-black text-opacity-60">{work.title}</span>
+              <span className="text-black text-opacity-60"> WIP</span>
             </div>
           ) : (
             <Link
               key={index}
               href={work.link}
-              className="hover:text-[#0070f3] transition-colors"
+              className="text-black hover:text-opacity-60"
             >
               <div>
                 <span>{work.title}</span>
@@ -127,7 +127,7 @@ export default function Home() {
           <Link
             key={index}
             href={`/blog/${post.slug}`}
-            className="hover:text-[#0070f3] transition-colors"
+            className="text-black hover:text-opacity-60"
           >
             <div>
               <span>{post.title}</span>
@@ -139,29 +139,29 @@ export default function Home() {
 
       {/* Contacts */}
       <div className="flex flex-col gap-y-3">
-        <h2 className="font-semibold">Get in touch :)</h2>
+        <h2 className="font-semibold">Let&apos;s get in touch :)</h2>
         <div className="flex gap-x-3">
           <Link
             href="mailto:wjdwjdgh6998@gmail.com"
-            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
           >
             Email
           </Link>
           <Link
             href="https://www.linkedin.com/in/jeongho-yang/"
-            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
           >
             LinkedIn
           </Link>
           <Link
             href="https://github.com/jeonghoyang12"
-            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
           >
             Github
           </Link>
           <Link
             href="/jeongho_yang_resume_pages.pdf"
-            className="text-black text-opacity-50 hover:text-opacity-80 underline"
+            className="text-black text-opacity-70 hover:text-opacity-50 border-b-2"
           >
             Resume
           </Link>

@@ -7,7 +7,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   const post = getPost(slug)
 
   return (
-    <div className="flex flex-col gap-y-5 max-w-[500px] w-full text-[14px] font-light">
+    <div className="flex flex-col gap-y-5 max-w-[500px] w-full text-[14px] font-[300]">
       <div>
         <h1 className="font-bold text-[16px]">{post.title}</h1>
         <span className="text-black text-opacity-50 mb-5">{post.date}</span>
@@ -24,7 +24,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             u: ({ ...props }) => (
               <u
                 {...props}
-                className="underline hover:text-[#0070f3] transition-colors"
+                className="text-black hover:text-opacity-60 border-b-2 no-underline"
               />
             ), // Underline links
             ul: ({ ...props }) => (
@@ -36,7 +36,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             img: ({ ...props }) => (
               <img
                 {...props}
-                className="w-[120%] -ml-[10%] max-w-none h-auto my-4 border border-gray-300 rounded-lg shadow-sm" // Add border and styling
+                className="w-[120%] -ml-[10%] max-w-none h-auto border border-gray-300 rounded-lg shadow-lg"
               />
             ),
           }}
