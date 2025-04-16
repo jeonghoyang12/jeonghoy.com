@@ -28,11 +28,13 @@ const works = [
     title: "AWS Security Monitoring System",
     timeline: "2025",
     link: "https://github.com/jeonghoyang12/security-monitoring-project",
+    image: "/images/000.jpg",
   },
   {
     title: "Blog with Notion",
     timeline: "2024",
     link: "https://github.com/jeonghoyang12/my-blog",
+    image: "/images/demo.gif",
   },
 ]
 
@@ -77,7 +79,9 @@ export default function Home() {
           <span className="text-[#111111] text-opacity-100">cybersecurity</span>
           <br />
           and{" "}
-          <span className="text-[#111111] text-opacity-100">web technologies.</span>
+          <span className="text-[#111111] text-opacity-100">
+            web technologies.
+          </span>
         </p>
         <p>
           Currently pursuing{" "}
@@ -86,8 +90,10 @@ export default function Home() {
           </span>{" "}
           with
           <br /> a specialization of{" "}
-          <span className="text-[#111111] text-opacity-100">cybersecurity</span> at
-          BGSU.
+          <span className="text-[#111111] text-opacity-100">
+            cybersecurity
+          </span>{" "}
+          at BGSU.
         </p>
       </div>
 
@@ -99,9 +105,7 @@ export default function Home() {
         {exprs.map((expr, index) => (
           <div key={index}>
             <div className="flex items-center gap-x-2">
-              <span>
-                {expr.company}
-              </span>
+              <span>{expr.company}</span>
               <span className="text-black text-opacity-25">
                 {" "}
                 {expr.timeline}
@@ -126,17 +130,31 @@ export default function Home() {
               <span className="text-[#111111] text-opacity-25"> WIP</span>
             </div>
           ) : (
-            <Link key={index} href={work.link}>
-              <div className="flex items-center gap-x-2">
-                <span className="text-[#111111] hover:text-opacity-50 border-b-[1px]">
-                  {work.title}
-                </span>
-                <span className="text-[#111111] text-opacity-25">
-                  {" "}
-                  {work.timeline}
-                </span>
-              </div>
-            </Link>
+            <div key={index}>
+              <Link href={work.link}>
+                <div className="flex items-center gap-x-2">
+                  <span className="text-[#111111] hover:text-opacity-50 border-b-[1px]">
+                    {work.title}
+                  </span>
+                  <span className="text-[#111111] text-opacity-25">
+                    {" "}
+                    {work.timeline}
+                  </span>
+                </div>
+              </Link>
+              {work.image && ( // Only render the image if it exists
+                <div className="mt-4">
+                  <Image
+                    src={work.image}
+                    alt={work.title}
+                    width={500}
+                    height={500}
+                    className="w-full h-auto rounded-lg shadow-lg"
+                    unoptimized
+                  />
+                </div>
+              )}
+            </div>
           )
         )}
       </div>
@@ -152,7 +170,10 @@ export default function Home() {
               <span className="text-[#111111] hover:text-opacity-50 border-b-[1px]">
                 {post.title}
               </span>
-              <span className="text-[#111111] text-opacity-25"> {post.date}</span>
+              <span className="text-[#111111] text-opacity-25">
+                {" "}
+                {post.date}
+              </span>
             </div>
           </Link>
         ))}
