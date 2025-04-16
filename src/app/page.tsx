@@ -71,7 +71,7 @@ export default function Home() {
           Kevin Jeongho Yang
         </h1>
       </div>
-      <div className="flex flex-col gap-y-8 text-black text-opacity-50">
+      <div className="flex flex-col gap-y-5 text-black text-opacity-50 mb-8">
         <p>
           I develop secure digital solutions focusing on{" "}
           <span className="text-black text-opacity-100">cybersecurity</span>
@@ -92,13 +92,13 @@ export default function Home() {
       </div>
 
       {/* Experiences */}
-      <div className="flex flex-col gap-y-8">
+      <div className="flex flex-col gap-y-5">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
           EXPERIENCE
         </h2>
         {exprs.map((expr, index) => (
           <div key={index}>
-            <div>
+            <div className="flex items-center gap-x-2">
               <span className="font-semibold">
                 {expr.company}
               </span>
@@ -121,13 +121,13 @@ export default function Home() {
         </h2>
         {works.map((work, index) =>
           work.timeline === "WIP" ? (
-            <div key={index}>
+            <div key={index} className="flex items-center gap-x-2">
               <span className="font-semibold">{work.title}</span>
               <span className="text-black text-opacity-25"> WIP</span>
             </div>
           ) : (
             <Link key={index} href={work.link}>
-              <div>
+              <div className="flex items-center gap-x-2">
                 <span className="font-semibold text-black hover:text-opacity-50">
                   {work.title}
                 </span>
@@ -142,13 +142,13 @@ export default function Home() {
       </div>
 
       {/* Writings */}
-      <div className="flex flex-col gap-y-8">
+      <div className="flex flex-col gap-y-5">
         <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[16px]">
           WRITINGS
         </h2>
         {posts.map((post, index) => (
           <Link key={index} href={`/blog/${post.slug}`}>
-            <div>
+            <div className="flex items-center gap-x-2">
               <span className="font-semibold text-black hover:text-opacity-50">
                 {post.title}
               </span>
