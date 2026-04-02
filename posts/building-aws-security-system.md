@@ -26,7 +26,8 @@ Detection rules transform raw logs into actionable security insights. They defin
 Effective detection rules need to balance sensitivity (catching threats) and specificity (avoiding false positives). Each rule should focus on a specific attack vector or suspicious behavior pattern.
 
 ![/images/Failed-login-attempt.png](/images/Failed-login-attempt.png)
-*<span style="color: gray; font-size: 12px;">Logs detected due to the failed login attempts</span>*
+
+*Logs detected due to the failed login attempts*
 
 **3. Dashboard Visualization**
 
@@ -35,7 +36,8 @@ Security dashboards translate complex data into actionable insights through visu
 A well-designed dashboard highlights security anomalies, provides context for investigations, and enables quick response to potential threats. It should present both high-level metrics and detailed event information.
 
 ![/images/dashboard.png](/images/dashboard.png)
-*<span style="color: gray; font-size: 12px;">Dashboard built with Kibana</span>*
+
+*Dashboard built with Kibana*
 
 **4. Future Implementation: GitHub Security Integration**
 
@@ -43,7 +45,7 @@ An essential next step in my project roadmap is integrating security practices d
 
 While my current implementation focuses on the monitoring capabilities, I'm actively working on extending the project to include GitHub security features. This work-in-progress component will enhance the security posture by shifting security left into the development process.
 
-*Planned Features*
+**Planned Features**
 
 - Pre-commit hooks to prevent credential leakage
 - GitHub Actions workflows for automated security scanning
