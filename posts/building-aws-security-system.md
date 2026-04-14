@@ -7,7 +7,7 @@ Security monitoring is essential for cloud environments, but getting hands-on ex
 
 **Note**: This project was developed as part of my security engineering skill development in 2025. You can view the full code repository <u>[here](https://github.com/jeonghoyang12/security-monitoring-project).</u>
 
-**1. Cloud Security Monitoring Architecture**
+## 1. Cloud Security Monitoring Architecture
 
 Security monitoring systems detect threats by analyzing logs and identifying suspicious patterns.
 
@@ -19,7 +19,7 @@ The ELK stack (Elasticsearch, Logstash, Kibana) provides a powerful, open-source
 - Elasticsearch indexes and stores security events
 - Kibana visualizes data and creates security dashboards
 
-**2. Detection Rules**
+## 2. Detection Rules
 
 Detection rules transform raw logs into actionable security insights. They define patterns that indicate potential threats.
 
@@ -29,7 +29,7 @@ Effective detection rules need to balance sensitivity (catching threats) and spe
 
 *Logs detected due to the failed login attempts*
 
-**3. Dashboard Visualization**
+## 3. Dashboard Visualization
 
 Security dashboards translate complex data into actionable insights through visual representation.
 
@@ -39,7 +39,7 @@ A well-designed dashboard highlights security anomalies, provides context for in
 
 *Dashboard built with Kibana*
 
-**4. Future Implementation: GitHub Security Integration**
+## 4. Future Implementation: GitHub Security Integration
 
 An essential next step in my project roadmap is integrating security practices directly into the development workflow.
 
@@ -56,7 +56,7 @@ While my current implementation focuses on the monitoring capabilities, I'm acti
 
 This integration represents the next phase of development and will complete the security lifecycle from development to production monitoring.
 
-**5. Implementation Challenges**
+## 5. Implementation Challenges
 
 Building a security monitoring system involves overcoming several technical hurdles.
 
