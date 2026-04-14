@@ -43,7 +43,8 @@ export default function Home() {
               width={128}
               height={128}
               className="w-11 h-11 rounded-full object-cover"
-              unoptimized
+              sizes="44px"
+              priority
             />
             <h1 className="font-semibold text-[24px] tracking-tight">
               Jeongho Yang

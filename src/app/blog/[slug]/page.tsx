@@ -92,7 +92,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 width={1200}
                 height={800}
                 className="w-full h-auto rounded-lg"
-                unoptimized
+                sizes="(max-width: 768px) 100vw, 1200px"
               />
             ),
             em: ({ ...props }) => (

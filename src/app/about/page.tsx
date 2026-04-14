@@ -20,20 +20,20 @@ export default function About() {
 
           <div className="flex gap-4 -mx-16 my-4">
             <Image
-              src="/images/childhood_1.jpg"
+              src="/images/childhood_1.JPG"
               alt="Childhood photo 1"
               width={800}
               height={600}
               className="w-1/2 h-auto rounded-lg"
-              unoptimized
+              sizes="(max-width: 768px) 50vw, 300px"
             />
             <Image
-              src="/images/childhood_2.jpg"
+              src="/images/childhood_2.JPG"
               alt="Childhood photo 2"
               width={800}
               height={600}
               className="w-1/2 h-auto rounded-lg"
-              unoptimized
+              sizes="(max-width: 768px) 50vw, 300px"
             />
           </div>
 
@@ -73,7 +73,7 @@ export default function About() {
               width={800}
               height={600}
               className="w-1/2 h-auto rounded-lg"
-              unoptimized
+              sizes="(max-width: 768px) 50vw, 300px"
             />
             <Image
               src="/images/mckinley_2.png"
@@ -81,7 +81,7 @@ export default function About() {
               width={800}
               height={600}
               className="w-1/2 h-auto rounded-lg"
-              unoptimized
+              sizes="(max-width: 768px) 50vw, 300px"
             />
           </div>
 
@@ -128,7 +128,7 @@ export default function About() {
                     width={800}
                     height={600}
                     className="w-1/2 h-auto rounded-lg"
-                    unoptimized
+                    sizes="(max-width: 768px) 50vw, 300px"
                   />
                   <Image
                     src="/images/soccer_2.png"
@@ -136,7 +136,7 @@ export default function About() {
                     width={800}
                     height={600}
                     className="w-1/2 h-auto rounded-lg"
-                    unoptimized
+                    sizes="(max-width: 768px) 50vw, 300px"
                   />
                 </div>
               </div>
