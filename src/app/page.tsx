@@ -9,7 +9,7 @@ const getPosts = () => {
   const postsDirectory = path.join(process.cwd(), "posts")
   const filenames = fs.readdirSync(postsDirectory)
 
-  return filenames.map((filename) => {
+  const posts = filenames.map((filename) => {
     const filePath = path.join(postsDirectory, filename)
     const fileContents = fs.readFileSync(filePath, "utf8")
     const { data } = matter(fileContents)
@@ -20,193 +20,118 @@ const getPosts = () => {
       slug: filename.replace(".md", ""),
     }
   })
+
+  // Sort by date in descending order (newest first)
+  return posts.sort((a, b) => {
+    const dateA = parseInt(a.date)
+    const dateB = parseInt(b.date)
+    return dateB - dateA
+  })
 }
-
-const works = [
-  { title: "Goznuk", timeline: "WIP", link: "" },
-  {
-    title: "AWS Security Monitoring System",
-    timeline: "2025",
-    link: "https://github.com/jeonghoyang12/security-monitoring-project",
-    image: "/images/000.jpg",
-  },
-  {
-    title: "Blog with Notion",
-    timeline: "2024",
-    link: "https://github.com/jeonghoyang12/my-blog",
-    image: "/images/demo.gif",
-  },
-]
-
-const exprs = [
-  {
-    company: "ShinwooTNS",
-    title: "Cloud Security Engineering Intern",
-    timeline: "2022 - 2023",
-    description:
-      "Implemented cloud security solutions and managed VPN systems for a global logistics company.",
-  },
-  {
-    company: "McKinley Rice",
-    title: "Software Developer Intern",
-    timeline: "2019 - 2020",
-    description:
-      "Engineered Full-Stack web app for e-commerce and dating platforms using Django and React.",
-  },
-]
 
 const posts = getPosts()
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-16 max-w-[500px] w-full text-[16px] font-normal tracking-[-0.35px]">
-      <div className="flex items-center gap-x-3">
-        <Image
-          src="/images/photo.png"
-          alt="jeongho yang"
-          width={128}
-          height={128}
-          className="w-10 h-10 rounded-full object-cover"
-          unoptimized
-        />
-        <h2 className="font-semibold text-[22px] text-opacity-100 tracking-tighter">
-          Kevin Jeongho Yang
-        </h2>
-      </div>
-      <div className="flex flex-col gap-y-5 text-[#111111] text-opacity-50 mb-4">
-        <p>
-          I develop secure digital solutions focusing on{" "}
-          <span className="text-[#111111] text-opacity-100">cybersecurity</span>
-          <br />
-          and{" "}
-          <span className="text-[#111111] text-opacity-100">
-            web technologies.
-          </span>
-        </p>
-        <p>
-          Currently pursuing{" "}
-          <span className="text-[#111111] text-opacity-100">
-            B.S. in computer science
-          </span>{" "}
-          with
-          <br /> a specialization of{" "}
-          <span className="text-[#111111] text-opacity-100">
-            cybersecurity
-          </span>{" "}
-          at BGSU.
-        </p>
-      </div>
-
-      {/* Experiences */}
-      <div className="flex flex-col gap-y-4 mb-4">
-        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
-          EXPERIENCE
-        </h2>
-        {exprs.map((expr, index) => (
-          <div key={index}>
-            <div className="flex items-center gap-x-2">
-              <span>{expr.company}</span>
-              <span className="text-black text-opacity-25">
-                {" "}
-                {expr.timeline}
-              </span>
-            </div>
-            <span className="text-black text-opacity-50">
-              {expr.description}
-            </span>
+    <div className="flex flex-col max-w-[600px] w-full text-[16px] font-normal tracking-[-0.35px] min-h-screen justify-between pt-20 pb-8">
+      <div className="flex flex-col gap-y-5">
+        <div>
+          <div className="flex items-center gap-x-3">
+            <Image
+              src="/images/photo.png"
+              alt="jeongho yang"
+              width={128}
+              height={128}
+              className="w-11 h-11 rounded-full object-cover"
+              unoptimized
+            />
+            <h1 className="font-semibold text-[24px] tracking-tight">
+              Jeongho Yang
+            </h1>
           </div>
-        ))}
-      </div>
 
-      {/* Projects */}
-      <div className="flex flex-col gap-y-4 mb-4">
-        <h2 className="font-semibold text-[#111111] text-opacity-30 tracking-[2px] text-[14px]">
-          PROJECTS
-        </h2>
-        {works.map((work, index) =>
-          work.timeline === "WIP" ? (
-            <div key={index} className="flex items-center gap-x-2">
-              <span>{work.title}</span>
-              <span className="text-[#111111] text-opacity-25"> WIP</span>
-            </div>
-          ) : (
-            <div key={index}>
-              <Link href={work.link}>
-                <div className="flex items-center gap-x-2">
-                  <span className="text-[#111111] hover:text-opacity-50 border-b-[1px]">
-                    {work.title}
-                  </span>
-                  <span className="text-[#111111] text-opacity-25">
-                    {" "}
-                    {work.timeline}
-                  </span>
-                </div>
+          <div className="flex flex-col gap-y-4 mt-5 text-[16px] text-[#b0b0b0] leading-relaxed">
+            <p>
+              I&apos;m a{" "}
+              <span className="text-[#ededed]">computer science</span> student
+              at BGSU, specializing in{" "}
+              <span className="text-[#ededed]">cybersecurity</span>, a field
+              I&apos;ve grown increasingly passionate about the deeper I go into
+              it.
+            </p>
+            <p>
+              Along the way, I got to build full-stack web apps for real
+              products at
+              <span className="text-[#ededed]">&nbsp;McKinley Rice</span>, then
+              shifted into cloud security at{" "}
+              <span className="text-[#ededed]">&nbsp;ShinwooTNS</span>, handling
+              VPN systems and security infrastructure for a global logistics
+              company.{" "}
+              <Link
+                href="/about"
+                className="text-[#ededed] hover:text-[#b0b0b0] border-b-[1px]"
+              >
+                More about me.
               </Link>
-              {work.image && ( // Only render the image if it exists
-                <div className="mt-4">
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    width={500}
-                    height={500}
-                    className="w-full h-auto rounded-lg shadow-lg"
-                    unoptimized
-                  />
-                </div>
-              )}
-            </div>
-          )
-        )}
-      </div>
+            </p>
+            <p>
+              Every project teaches me something new, and I try to write it all
+              down. Here&apos;s what I&apos;ve covered:{" "}
+            </p>
+          </div>
 
-      {/* Writings */}
-      <div className="flex flex-col gap-y-4 mb-4">
-        <h2 className="font-semibold text-black text-opacity-30 tracking-[2px] text-[14px]">
-          WRITINGS
-        </h2>
-        {posts.map((post, index) => (
-          <Link key={index} href={`/blog/${post.slug}`}>
-            <div className="flex items-center gap-x-2">
-              <span className="text-[#111111] hover:text-opacity-50 border-b-[1px]">
-                {post.title}
-              </span>
-              <span className="text-[#111111] text-opacity-25">
-                {" "}
-                {post.date}
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          <ul className="flex flex-col gap-y-3 list-disc ml-5 mt-4">
+            {posts.map((post, index) => (
+              <li key={index}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="flex items-center gap-x-2"
+                >
+                  <span className="text-[#ededed] hover:text-[#b0b0b0] border-b-[1px]">
+                    {post.title}
+                  </span>
+                  <span className="text-[#888888]"> {post.date}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-      {/* Contacts */}
-      <div className="flex flex-col gap-y-3">
-        <h2 className="font-semibold">Let&apos;s get in touch :)</h2>
-        <div className="flex gap-x-5">
-          <Link
-            href="mailto:wjdwjdgh6998@gmail.com"
-            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
-          >
-            Email
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/jeongho-yang/"
-            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
-          >
-            LinkedIn
-          </Link>
-          <Link
-            href="https://github.com/jeonghoyang12"
-            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
-          >
-            Github
-          </Link>
-          <Link
-            href="/jeongho_yang_resume_pages.pdf"
-            className="text-[#111111] text-opacity-50 hover:text-opacity-25 border-b-[1px]"
-          >
-            Resume
-          </Link>
+          <div className="flex flex-col gap-y-4 mt-5 text-[16px] text-[#b0b0b0] leading-relaxed">
+            <p>
+              I&apos;m always open to a conversation. You can find me{" "}
+              <Link
+                href="https://www.linkedin.com/in/jeongho-yang/"
+                className="text-[#ededed] hover:text-[#b0b0b0] border-b-[1px] border-[#888888]"
+              >
+                online
+              </Link>
+              , browse my{" "}
+              <Link
+                href="https://github.com/jeonghoyang12"
+                className="text-[#ededed] hover:text-[#b0b0b0] border-b-[1px] border-[#888888]"
+              >
+                code
+              </Link>
+              , or just send me an{" "}
+              <Link
+                href="mailto:wjdwjdgh6998@gmail.com"
+                className="text-[#ededed] hover:text-[#b0b0b0] border-b-[1px] border-[#888888]"
+              >
+                email
+              </Link>
+              . If you are curious about my background, you can also check out
+              my{" "}
+              <Link
+                href="/jeongho_yang_resume.pdf"
+                className="text-[#ededed] hover:text-[#b0b0b0] border-b-[1px] border-[#888888]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                resume
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </div>
     </div>
